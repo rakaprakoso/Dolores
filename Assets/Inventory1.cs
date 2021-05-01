@@ -19,15 +19,17 @@ public class Inventory1 : MonoBehaviour
     void Start()
     {
         Invent.Drag.Click.performed += _ => BringInventory();
+        transform.localPosition = new Vector2(-400f-32.2f,0);
     }
     
     public void changepos(){
         if (hide){
-            transform.position = new Vector2(44.22f,transform.position.y);
-            //this.RectTransform.position.x = ;
+            //transform.position = new Vector2(33.2f,transform.position.y);
+            transform.localPosition = new Vector2(43.4f-400f,0);
             hide = false;
         }else{
-            transform.position = new Vector2(-31.7f,transform.position.y);
+            transform.localPosition = new Vector2(-400f-32.2f,0);
+            //transform.position = new Vector2(-25.2f,transform.position.y);
             //this.RectTransform.position.x = ;
             hide = true;
         }
@@ -59,5 +61,23 @@ public class Inventory1 : MonoBehaviour
          }
      
     }
+
+    public void MoveLeft(RectTransform panel)
+     {
+         StartCoroutine(Move(panel, new Vector2(-1255, 0)));
+     }
+ 
+     IEnumerator Move(RectTransform rt, Vector2 targetPos)
+     {
+         float step = 0;
+         while (step < 1)
+         {
+             rt.offsetMin = Vector2.Lerp(rt.offsetMin, targetPos, step += Time.deltaTime);
+             rt.offsetMax = Vector2.Lerp(rt.offsetMax, targetPos, step += Time.deltaTime);
+             Debug.Log(Time.deltaTime);
+             yield return new WaitForEndOfFrame();
+         }
+     }
+
 }
 

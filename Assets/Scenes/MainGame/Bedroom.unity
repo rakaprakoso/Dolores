@@ -2276,7 +2276,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -31.7, y: 15}
+  m_AnchoredPosition: {x: -32.04, y: 0}
   m_SizeDelta: {x: 87.6996, y: 281.4581}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1229757462
@@ -2625,10 +2625,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1273364175}
-  selectedCommands:
-  - {fileID: 1273364177}
+  selectedBlocks: []
+  selectedCommands: []
   variables:
   - {fileID: 1273364173}
   - {fileID: 1273364172}
@@ -2735,7 +2733,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 69
     y: 70
-    width: 77
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
