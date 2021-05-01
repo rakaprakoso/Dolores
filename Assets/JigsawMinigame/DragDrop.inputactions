@@ -1,0 +1,71 @@
+{
+    "name": "DragDrop",
+    "maps": [
+        {
+            "name": "Drag",
+            "id": "452c7b0e-9f9b-48f3-aa0a-6f611b18d094",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Value",
+                    "id": "8c83b3de-2d8d-4461-9580-26773a82d4be",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightClick",
+                    "type": "Button",
+                    "id": "2d2c7455-ef6c-4114-a03c-74ff89e0095b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Posistion",
+                    "type": "PassThrough",
+                    "id": "8a4c77e4-3359-4df3-8ea2-892824172529",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3b8da149-5391-403d-b7b5-4c593ae29d1f",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "47d11a34-ba74-4f1c-879f-d5d8e4590c43",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Posistion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e4ee0408-3e98-4d18-a95d-f3130832370c",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

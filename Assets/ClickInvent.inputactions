@@ -1,0 +1,33 @@
+{
+    "name": "ClickInvent",
+    "maps": [
+        {
+            "name": "Click",
+            "id": "3ab6e5ce-97e9-42a4-b9b8-28accfa05120",
+            "actions": [
+                {
+                    "name": "Clicked",
+                    "type": "Button",
+                    "id": "72354ed4-a9e4-44c8-856e-c89ab68c0701",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8e6582ef-7050-4069-b87d-79b6f5beea5c",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Clicked",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
