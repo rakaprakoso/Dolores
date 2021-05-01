@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     public float gems;
     public Text gemsDisplay;
+    public GameObject inspect;
+    private Color inspectAlpha;
 
     private PlayerMovements PlayerMovements;
 
@@ -17,20 +19,24 @@ public class PlayerController : MonoBehaviour
 
     private SpriteRenderer SpriteRenderer;
 
-private void Awake() {
-    PlayerMovements = new PlayerMovements();
-    Animator = GetComponent<Animator>();
-    SpriteRenderer = GetComponent<SpriteRenderer>();
-}
-private void OnEnable() {
-    PlayerMovements.Enable();
-}
-private void OnDisable() {
-    PlayerMovements.Disable();
-}
+    private void Awake() {
+        PlayerMovements = new PlayerMovements();
+        Animator = GetComponent<Animator>();
+        SpriteRenderer = GetComponent<SpriteRenderer>();
+        inspectAlpha = inspect.GetComponent<SpriteRenderer>().color;
+
+        
+    }
+    private void OnEnable() {
+        PlayerMovements.Enable();
+    }
+    private void OnDisable() {
+        PlayerMovements.Disable();
+    }
     void Start()
     {
-        
+        inspectAlpha.a = 0f;
+        inspect.GetComponent<SpriteRenderer>().color = inspectAlpha;
     }
 
     // Update is called once per frame
@@ -66,7 +72,8 @@ private void OnDisable() {
                 unDetected();
             }
     }
-     float a=0;
+
+    float a=0;
     private void Detected(){
         if (a < 10){
         a += 0.03f;
@@ -81,4 +88,48 @@ private void OnDisable() {
         }
        
     }
+
+    public void InspectBlink(bool show){
+        inspectAlpha.a = show == true ? 1f : 0f;
+        inspect.GetComponent<SpriteRenderer>().color = inspectAlpha;
+        //StartCoroutine(Blinker());
+        
+    }
+    public IEnumerator Blinker(){
+         Color inspectColor = inspect.GetComponent<SpriteRenderer>().color;
+         inspect.GetComponent<SpriteRenderer>().color = inspectColor;
+
+         //inspectAlpha.a = 1f;
+         //inspectColor = inspect.GetComponent<SpriteRenderer>().color;
+         
+        inspectColor.a = 0f;
+        inspect.GetComponent<SpriteRenderer>().color = inspectColor;
+        yield return new WaitForSeconds (0.5f);
+        inspectColor.a = 1f;
+        inspect.GetComponent<SpriteRenderer>().color = inspectColor;
+        yield return new WaitForSeconds (1f);
+        inspectColor.a = 0f;
+        inspect.GetComponent<SpriteRenderer>().color = inspectColor;
+        yield return new WaitForSeconds (1.5f);
+        inspectColor.a = .8f;
+        inspect.GetComponent<SpriteRenderer>().color = inspectColor;
+        yield return new WaitForSeconds (2f);
+        inspectColor.a = 0f;
+        inspect.GetComponent<SpriteRenderer>().color = inspectColor;
+        yield return new WaitForSeconds (2.5f);
+        inspectColor.a = .7f;
+        inspect.GetComponent<SpriteRenderer>().color = inspectColor;
+        yield return new WaitForSeconds (3f);
+        inspectColor.a = 0f;
+        inspect.GetComponent<SpriteRenderer>().color = inspectColor;
+        yield return new WaitForSeconds (3.5f);
+        inspectColor.a = .4f;
+        inspect.GetComponent<SpriteRenderer>().color = inspectColor;
+        yield return new WaitForSeconds (4f);
+        inspectColor.a = 0f;
+        inspect.GetComponent<SpriteRenderer>().color = inspectColor;
+         
+         //Character.SetActive(false);
+         StopCoroutine ("Blinker");
+     }
 }
