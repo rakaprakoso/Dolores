@@ -19,11 +19,16 @@ public class PlayerController : MonoBehaviour
 
     private SpriteRenderer SpriteRenderer;
 
+    public GameObject inventoryHUD;
+
+    
+
     private void Awake() {
         PlayerMovements = new PlayerMovements();
         Animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         inspectAlpha = inspect.GetComponent<SpriteRenderer>().color;
+        //DontDestroyOnLoad(inventoryHUD);
 
         
     }

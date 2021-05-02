@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -73,10 +74,26 @@ public bool CheckMatch(){
         success = true;
         points++;
     }
+    if (points==2)
+    {
+        Debug.Log("SUCCESS");
+        StartCoroutine(LoadYourAsyncScene(5));
+    }
     return success;
 }
 
  private void Awake() {
     token = GameObject.Find("Token");
 }
+IEnumerator LoadYourAsyncScene(int index)
+    {
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(index);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
 }
