@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
         a += 0.03f;
         SneakyBar.setBar(a);
         }
+        SneakyBar.gameover(a);
     }
 
     private void unDetected(){

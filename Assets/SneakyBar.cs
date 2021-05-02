@@ -17,4 +17,12 @@ public class SneakyBar : MonoBehaviour
     public void setBar(float Noise) {
         slider.value = Noise;
     }
+
+    public void gameover(float noise){
+        if(slider.value >= slider.maxValue){
+            Debug.Log("You're dead");
+        }
+        
+    }
+
 }
