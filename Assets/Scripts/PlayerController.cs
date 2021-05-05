@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    float currtime=0f;
+    float startingtime=2f;
+    bool starttime= false;
     public SneakyBar SneakyBar;
     [SerializeField] private float speed;
 
     public float gems;
     public Text gemsDisplay;
     public GameObject inspect;
+    public Animator Warning_sign;
     private Color inspectAlpha;
 
     private PlayerMovements PlayerMovements;
@@ -29,7 +33,7 @@ public class PlayerController : MonoBehaviour
         SpriteRenderer = GetComponent<SpriteRenderer>();
         inspectAlpha = inspect.GetComponent<SpriteRenderer>().color;
         //DontDestroyOnLoad(inventoryHUD);
-
+        Warning_sign = GameObject.Find("Warning").GetComponent<Animator>();
         
     }
     private void OnEnable() {
@@ -40,6 +44,7 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+        currtime = startingtime;
         inspectAlpha.a = 0f;
         inspect.GetComponent<SpriteRenderer>().color = inspectAlpha;
     }
@@ -49,6 +54,13 @@ public class PlayerController : MonoBehaviour
     {
         gemsDisplay.text = gems.ToString();
         move();
+        if(starttime){
+            currtime -= 1 * Time.deltaTime;
+            if(currtime <=0){
+                Debug.Log("dead");
+                starttime = false;
+            }
+        }
     }
 
     private void move(){
@@ -84,6 +96,12 @@ public class PlayerController : MonoBehaviour
         a += 0.03f;
         SneakyBar.setBar(a);
         }
+        else if (a >= 10){
+            starttime = true;
+            GameObject.Find("Warning").SetActive(true);
+            Warning_sign.Play("Blink");
+        }
+        
     }
 
     private void unDetected(){
