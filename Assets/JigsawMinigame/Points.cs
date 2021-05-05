@@ -7,6 +7,7 @@ public class Points : MonoBehaviour
     public int MaxPoints;
     public int points;
     public GameObject papers;
+    public GameObject button;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,8 @@ public class Points : MonoBehaviour
     void Update()
     {
         if (points >= MaxPoints){
-            transform.GetChild(0).gameObject.SetActive(true);
+            //transform.GetChild(0).gameObject.SetActive(true);
+            button.SetActive(true);
         }
     }
 

@@ -1604,7 +1604,7 @@ PrefabInstance:
     - target: {fileID: 4299574970056505474, guid: 8e260ff05172c814396b028450754951,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.93
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 4299574970056505474, guid: 8e260ff05172c814396b028450754951,
         type: 3}
@@ -2130,6 +2130,7 @@ MonoBehaviour:
   flowChartObj: {fileID: 0}
   UIRootObject: {fileID: 0}
   sceneIndex: 4
+  playerExist: 1
 --- !u!4 &1365767692156001838
 Transform:
   m_ObjectHideFlags: 0

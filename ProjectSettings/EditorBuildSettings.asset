@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainGame/Jigsaw.unity
     guid: 321818f1ce905f64b80a2735f64b3b90
+  - enabled: 1
+    path: Assets/Scenes/MainGame/Corridor.unity
+    guid: 7ca191426ced93d4cafe55b1434cb97d
+  - enabled: 1
+    path: Assets/Scenes/CutScene/Gameover.unity
+    guid: 087f467a71696bc44bc2cee90e6063ec
   m_configObjects: {}
