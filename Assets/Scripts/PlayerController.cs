@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
             currtime -=1 * Time.deltaTime;
             if (currtime<=0)
             {
-                Debug.Log("Dead");
+                SneakyBar.gameover(a);
                 starttime =false;
             }
         }
@@ -147,8 +147,10 @@ public class PlayerController : MonoBehaviour
             starttime = true;
             GameObject.Find("Warning").SetActive(true);
             Warning_sign.Play("Blink");
+        }else if (a >=12){
+            SneakyBar.gameover(a);
         }
-        //SneakyBar.gameover(a);
+        //
         
     }
 
