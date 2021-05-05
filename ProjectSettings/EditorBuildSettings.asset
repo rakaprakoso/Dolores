@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainGame/Jigsaw.unity
+    guid: 321818f1ce905f64b80a2735f64b3b90
   m_configObjects: {}

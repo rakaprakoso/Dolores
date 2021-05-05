@@ -10,10 +10,13 @@ public class ChangeScene : MonoBehaviour
     public GameObject UIRootObject;
     private AsyncOperation sceneAsync;
     public int sceneIndex;
+    public bool playerExist = true;
 
     private void Start()
     {
+        if (playerExist){
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -55,7 +58,12 @@ public class ChangeScene : MonoBehaviour
         
     }
 
-    IEnumerator LoadYourAsyncScene(int index)
+    public void LoadSceneNext()
+    {
+        StartCoroutine(LoadYourAsyncScene(sceneIndex));
+    }
+
+    public IEnumerator LoadYourAsyncScene(int index)
     {
         // The Application loads the Scene in the background as the current Scene runs.
         // This is particularly good for creating loading screens.

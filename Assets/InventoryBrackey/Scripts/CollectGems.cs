@@ -17,13 +17,25 @@ public class CollectGems : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player")) {
             // spawn the sun button at the first available inventory slot ! 
-            Instantiate(collectEffect, player.transform.position, Quaternion.identity);
-            player.gems += count;
-            Destroy(gameObject);
+            player.InspectBlink(true);
+            if (Input.GetKeyDown(KeyCode.Q)){
+                Instantiate(collectEffect, player.transform.position, Quaternion.identity);
+                player.gems += count;
+                Destroy(gameObject);
+            }
+            
+        }
+        
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player")) {
+            // spawn the sun button at the first available inventory slot ! 
+            player.InspectBlink(false);
         }
         
     }
