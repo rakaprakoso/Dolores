@@ -29,7 +29,7 @@ public class Firstscene : MonoBehaviour
     void Update()
     {
         Keyboard kb = InputSystem.GetDevice<Keyboard>();
-        if(kb.eKey.wasPressedThisFrame){
+        if(kb.qKey.wasPressedThisFrame){
             if (index==7)
             {
                 StartCoroutine(LoadScene());

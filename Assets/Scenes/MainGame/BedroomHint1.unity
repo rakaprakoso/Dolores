@@ -121,18 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &7887530 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4299574970056505478, guid: 8e260ff05172c814396b028450754951,
-    type: 3}
-  m_PrefabInstance: {fileID: 9116743731280517835}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31622dea6751a4c48a7690bbc2120a1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &35720660
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,15 +494,35 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2432782175134977439, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2954967963407181085, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
         type: 3}
       propertyPath: PlayerController
       value: 
-      objectReference: {fileID: 7887530}
+      objectReference: {fileID: 0}
     - target: {fileID: 3449322587215013290, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554959541139464102, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: inspect
+      value: 
+      objectReference: {fileID: 762525137}
+    - target: {fileID: 3554959541139464102, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: HowToPlay
+      value: 
+      objectReference: {fileID: 1600899403}
+    - target: {fileID: 3554959541139464102, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4103951543608602145, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
         type: 3}
@@ -535,7 +543,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerController
       value: 
-      objectReference: {fileID: 7887530}
+      objectReference: {fileID: 0}
     - target: {fileID: 4584677677034033389, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -545,6 +553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Unpaused
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397522758104497889, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5639490252831717576, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
         type: 3}
@@ -686,6 +699,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7059114632952576215, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1600899405}
+    - target: {fileID: 7059114632952576215, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InstructionPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 7199692548496092019, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
         type: 3}
       propertyPath: m_IsActive
@@ -703,6 +726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7731165481796721117, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
         type: 3}
+      propertyPath: m_Delegates.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731165481796721117, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1635228520}
@@ -710,6 +738,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PauseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948103013239203183, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948103013239203183, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f46e45a9b1317904bb7bc07a70ddeaf4, type: 3}
@@ -737,6 +775,7 @@ GameObject:
   - component: {fileID: 796581547}
   - component: {fileID: 796581551}
   - component: {fileID: 796581545}
+  - component: {fileID: 796581550}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -771,7 +810,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 796581544}
   selectedCommands:
-  - {fileID: 796581546}
+  - {fileID: 796581550}
   variables:
   - {fileID: 796581542}
   - {fileID: 796581545}
@@ -859,6 +898,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 796581546}
   - {fileID: 796581543}
+  - {fileID: 796581550}
   - {fileID: 796581551}
   suppressAllAutoSelections: 0
 --- !u!114 &796581545
@@ -967,6 +1007,26 @@ Transform:
   m_Father: {fileID: 1473972485}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &796581550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796581540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207aecf668a0345388087ccf522f9957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 10
+  indentLevel: 0
+  duration: 1
+  targetAlpha: 1
+  waitUntilFinished: 1
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  fadeTexture: {fileID: 0}
+  fadeTweenType: 4
 --- !u!114 &796581551
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2315,6 +2375,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 725281646}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1600899403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9136681172178504843, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 725281646}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1600899405 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3554959541139464102, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 725281646}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600899403}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31622dea6751a4c48a7690bbc2120a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1622286667
 GameObject:
   m_ObjectHideFlags: 1
@@ -2414,6 +2492,7 @@ MonoBehaviour:
   inspect: {fileID: 762525137}
   inventoryHUD: {fileID: 0}
   PauseMenu: {fileID: 1594047129}
+  HowToPlay: {fileID: 0}
   IsPaused: 1
 --- !u!114 &1755755507 stripped
 MonoBehaviour:
@@ -2792,9 +2871,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4299574970056505478, guid: 8e260ff05172c814396b028450754951,
         type: 3}
-      propertyPath: gems
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: HowToPlay
+      value: 
+      objectReference: {fileID: 1600899403}
     - target: {fileID: 4299574970056505478, guid: 8e260ff05172c814396b028450754951,
         type: 3}
       propertyPath: PauseMenu
@@ -2810,11 +2889,6 @@ PrefabInstance:
       propertyPath: gemsDisplay
       value: 
       objectReference: {fileID: 2093597368}
-    - target: {fileID: 4299574970056505478, guid: 8e260ff05172c814396b028450754951,
-        type: 3}
-      propertyPath: inventoryHUD
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4299574970056505497, guid: 8e260ff05172c814396b028450754951,
         type: 3}
       propertyPath: slots.Array.data[0]

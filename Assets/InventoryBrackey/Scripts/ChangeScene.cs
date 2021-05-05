@@ -15,7 +15,7 @@ public class ChangeScene : MonoBehaviour
     private void Start()
     {
         if (playerExist){
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         }
     }
 
@@ -31,21 +31,15 @@ public class ChangeScene : MonoBehaviour
     {
         if (other.CompareTag("Player")) {
             // spawn the sun button at the first available inventory slot ! 
-            player.InspectBlink(true);
-            if (Input.GetKeyDown(KeyCode.Q)){
-                Debug.Log("Kepencet");
-                StartCoroutine(LoadYourAsyncScene(sceneIndex));
-                /*for (int i = 0; i < inventory.items.Length; i++)
-                {
-                    if (inventory.items[i] == 0) { // check whether the slot is EMPTY
-                        Instantiate(effect, transform.position, Quaternion.identity);
-                        inventory.items[i] = 1; // makes sure that the slot is now considered FULL
-                        Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
-                        Destroy(gameObject);
-                        break;
-                    }
-                }*/
+            if (player.item>=3)
+            {
+                player.enterRoomBlink(true);
+                if (Input.GetKeyDown("space")){
+                    Debug.Log("Kepencet");
+                    StartCoroutine(LoadYourAsyncScene(sceneIndex));
+                }
             }
+            
         }
         
     }
@@ -53,7 +47,7 @@ public class ChangeScene : MonoBehaviour
     {
         if (other.CompareTag("Player")) {
             // spawn the sun button at the first available inventory slot ! 
-            player.InspectBlink(false);
+            player.enterRoomBlink(false);
         }
         
     }

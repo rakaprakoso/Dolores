@@ -11,7 +11,9 @@ public class PlayerController : MonoBehaviour
     public float gems;
     public Text gemsDisplay;
     public GameObject inspect;
+    public GameObject enterRoom;
     private Color inspectAlpha;
+    private Color enterRoomAlpha;
 
     private PlayerMovements PlayerMovements;
 
@@ -21,7 +23,14 @@ public class PlayerController : MonoBehaviour
 
     public GameObject inventoryHUD;
     public GameObject PauseMenu;
+    public GameObject HowToPlay;
+    public int item=0;
     [SerializeField]public bool IsPaused = true;
+    public Animator Warning_sign;
+
+    float currtime =0f;
+    float startingtime = 2f;
+    bool starttime=false;
 
     
 
@@ -30,8 +39,10 @@ public class PlayerController : MonoBehaviour
         Animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         inspectAlpha = inspect.GetComponent<SpriteRenderer>().color;
+        enterRoomAlpha = enterRoom.GetComponent<SpriteRenderer>().color;
         PauseMenu = GameObject.Find("PauseMenu");
         //DontDestroyOnLoad(inventoryHUD);
+        Warning_sign = GameObject.Find("Warning").GetComponent<Animator>();
 
         
     }
@@ -47,6 +58,8 @@ public class PlayerController : MonoBehaviour
     {
         inspectAlpha.a = 0f;
         inspect.GetComponent<SpriteRenderer>().color = inspectAlpha;
+        enterRoomAlpha.a = 0f;
+        enterRoom.GetComponent<SpriteRenderer>().color = enterRoomAlpha;
     }
 
     // Update is called once per frame
@@ -54,6 +67,15 @@ public class PlayerController : MonoBehaviour
     {
         gemsDisplay.text = gems.ToString();
         move();
+        if (starttime)
+        {
+            currtime -=1 * Time.deltaTime;
+            if (currtime<=0)
+            {
+                Debug.Log("Dead");
+                starttime =false;
+            }
+        }
     }
 
     private void Interact(){
@@ -102,19 +124,37 @@ public class PlayerController : MonoBehaviour
         }
      }
 
+     public void InstructionPanel(){
+        if(IsPaused){
+            Time.timeScale = 0;
+            IsPaused=false;
+            HowToPlay.transform.Find("Menu").gameObject.SetActive(true);
+        }
+        else{
+            Time.timeScale = 1;
+            IsPaused = true;
+            HowToPlay.transform.Find("Menu").gameObject.SetActive(false);
+        }
+     }
+
     float a=0;
     private void Detected(){
         if (a < 10){
         a += 0.03f;
         SneakyBar.setBar(a);
         }
-        SneakyBar.gameover(a);
+        else if (a >= 10){
+            starttime = true;
+            GameObject.Find("Warning").SetActive(true);
+            Warning_sign.Play("Blink");
+        }
+        //SneakyBar.gameover(a);
         
     }
 
     private void unDetected(){
         if (a  > 0){
-        a -= 0.003f;
+        a -= 0.03f;
         SneakyBar.setBar(a);
         }
        
@@ -162,6 +202,50 @@ public class PlayerController : MonoBehaviour
          
          //Character.SetActive(false);
          StopCoroutine ("Blinker");
+     }
+
+     public void enterRoomBlink(bool show){
+        enterRoomAlpha.a = show == true ? 1f : 0f;
+        enterRoom.GetComponent<SpriteRenderer>().color = enterRoomAlpha;
+        //StartCoroutine(Blinker());
+        
+    }
+    public IEnumerator BlinkerEnterRoom(){
+         Color enterRoomColor = enterRoom.GetComponent<SpriteRenderer>().color;
+         enterRoom.GetComponent<SpriteRenderer>().color = enterRoomColor;
+
+         //enterRoomAlpha.a = 1f;
+         //enterRoomColor = enterRoom.GetComponent<SpriteRenderer>().color;
+         
+        enterRoomColor.a = 0f;
+        enterRoom.GetComponent<SpriteRenderer>().color = enterRoomColor;
+        yield return new WaitForSeconds (0.5f);
+        enterRoomColor.a = 1f;
+        enterRoom.GetComponent<SpriteRenderer>().color = enterRoomColor;
+        yield return new WaitForSeconds (1f);
+        enterRoomColor.a = 0f;
+        enterRoom.GetComponent<SpriteRenderer>().color = enterRoomColor;
+        yield return new WaitForSeconds (1.5f);
+        enterRoomColor.a = .8f;
+        enterRoom.GetComponent<SpriteRenderer>().color = enterRoomColor;
+        yield return new WaitForSeconds (2f);
+        enterRoomColor.a = 0f;
+        enterRoom.GetComponent<SpriteRenderer>().color = enterRoomColor;
+        yield return new WaitForSeconds (2.5f);
+        enterRoomColor.a = .7f;
+        enterRoom.GetComponent<SpriteRenderer>().color = enterRoomColor;
+        yield return new WaitForSeconds (3f);
+        enterRoomColor.a = 0f;
+        enterRoom.GetComponent<SpriteRenderer>().color = enterRoomColor;
+        yield return new WaitForSeconds (3.5f);
+        enterRoomColor.a = .4f;
+        enterRoom.GetComponent<SpriteRenderer>().color = enterRoomColor;
+        yield return new WaitForSeconds (4f);
+        enterRoomColor.a = 0f;
+        enterRoom.GetComponent<SpriteRenderer>().color = enterRoomColor;
+         
+         //Character.SetActive(false);
+         StopCoroutine ("BlinkerEnterRoom");
      }
 
 }
