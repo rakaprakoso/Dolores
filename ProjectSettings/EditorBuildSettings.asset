@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MainMenu/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 7f10b40375aae1543a2d092b02c606c3
   - enabled: 1
     path: Assets/Scenes/MainGame/BedroomIntro.unity
@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CutScene/Gameover.unity
     guid: 087f467a71696bc44bc2cee90e6063ec
+  - enabled: 1
+    path: Assets/Scenes/CutScene/FirstCutScene.unity
+    guid: e2c697cb4578cfe49875dc2bdaad5f46
   m_configObjects: {}

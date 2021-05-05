@@ -1898,7 +1898,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 74.96907
     y: 76.03093
-    width: 77.83505
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1931,7 +1931,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 258.87997
     y: 76.48724
-    width: 112.8866
+    width: 72.8866
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2815,6 +2815,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4299574970056505478, guid: 8e260ff05172c814396b028450754951,
         type: 3}
+      propertyPath: IsPaused
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299574970056505478, guid: 8e260ff05172c814396b028450754951,
+        type: 3}
       propertyPath: SneakyBar
       value: 
       objectReference: {fileID: 1751565498}
@@ -2852,6 +2857,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 99825885928347828, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449322587215013290, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7007133427933932184, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
         type: 3}
       propertyPath: m_AnchorMax.y

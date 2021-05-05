@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer SpriteRenderer;
 
     public GameObject inventoryHUD;
+    public GameObject PauseMenu;
+    [SerializeField]public bool IsPaused = true;
 
     
 
@@ -28,12 +30,15 @@ public class PlayerController : MonoBehaviour
         Animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         inspectAlpha = inspect.GetComponent<SpriteRenderer>().color;
+        PauseMenu = GameObject.Find("PauseMenu");
         //DontDestroyOnLoad(inventoryHUD);
 
         
     }
     private void OnEnable() {
         PlayerMovements.Enable();
+        PlayerMovements.Land.Interact.performed += _ => Interact();
+        PlayerMovements.Land.PauseMenu.performed += _ => PauseGame();
     }
     private void OnDisable() {
         PlayerMovements.Disable();
@@ -51,32 +56,51 @@ public class PlayerController : MonoBehaviour
         move();
     }
 
-    private void move(){
-        float movementInput = PlayerMovements.Land.Move.ReadValue<float>();
-        Vector3 currentPosition = transform.position;
-        currentPosition.x += movementInput * speed * Time.deltaTime;
-        transform.position = currentPosition;
-
-        if (movementInput != 0 && PlayerMovements.Land.Sneak.ReadValue <float>() != 1){
-            speed = 2;
-            Animator.SetBool("Walk",true);
-            }
-        else Animator.SetBool("Walk",false);
-
-        if (movementInput == 1) SpriteRenderer.flipX = false;
-        else if (movementInput == -1)SpriteRenderer.flipX = true;
-
-        if((movementInput == 1 && PlayerMovements.Land.Sneak.ReadValue <float>() == 1) ||(movementInput == -1 && PlayerMovements.Land.Sneak.ReadValue <float>() == 1) ) {
-            Animator.SetBool("Run",true);
-            speed =3;
-            Detected();
-        }
-        else
-            {
-                Animator.SetBool("Run",false);
-                unDetected();
-            }
+    private void Interact(){
+        Debug.Log("test");
     }
+
+    private void move(){
+        if (IsPaused){
+            float movementInput = PlayerMovements.Land.Move.ReadValue<float>();
+            Vector3 currentPosition = transform.position;
+            currentPosition.x += movementInput * speed * Time.deltaTime;
+            transform.position = currentPosition;
+
+            if (movementInput != 0 && PlayerMovements.Land.Sneak.ReadValue <float>() != 1){
+                speed = 2;
+                Animator.SetBool("Walk",true);
+                }
+            else Animator.SetBool("Walk",false);
+
+            if (movementInput == 1) SpriteRenderer.flipX = false;
+            else if (movementInput == -1)SpriteRenderer.flipX = true;
+
+            if((movementInput == 1 && PlayerMovements.Land.Sneak.ReadValue <float>() == 1) ||(movementInput == -1 && PlayerMovements.Land.Sneak.ReadValue <float>() == 1) ) {
+                Animator.SetBool("Run",true);
+                speed =3;
+                Detected();
+            }
+            else
+                {
+                    Animator.SetBool("Run",false);
+                    unDetected();
+                }
+        }
+    }
+
+     public void PauseGame(){
+        if(IsPaused){
+            Time.timeScale = 0;
+            IsPaused=false;
+            PauseMenu.transform.Find("Menu").gameObject.SetActive(true);
+        }
+        else{
+            Time.timeScale = 1;
+            IsPaused = true;
+            PauseMenu.transform.Find("Menu").gameObject.SetActive(false);
+        }
+     }
 
     float a=0;
     private void Detected(){
@@ -84,6 +108,8 @@ public class PlayerController : MonoBehaviour
         a += 0.03f;
         SneakyBar.setBar(a);
         }
+        SneakyBar.gameover(a);
+        
     }
 
     private void unDetected(){
@@ -137,4 +163,5 @@ public class PlayerController : MonoBehaviour
          //Character.SetActive(false);
          StopCoroutine ("Blinker");
      }
+
 }

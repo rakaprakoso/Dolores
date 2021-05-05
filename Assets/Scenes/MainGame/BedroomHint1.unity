@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &7887530 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4299574970056505478, guid: 8e260ff05172c814396b028450754951,
+    type: 3}
+  m_PrefabInstance: {fileID: 9116743731280517835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31622dea6751a4c48a7690bbc2120a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &35720660
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +450,18 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &622205517 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4535107925769454541, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 725281646}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf48d46a6e74314fbb0a060114423ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &667965222
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +501,61 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 99825885928347828, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954967963407181085, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: PlayerController
+      value: 
+      objectReference: {fileID: 7887530}
+    - target: {fileID: 3449322587215013290, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103951543608602145, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1755755507}
+    - target: {fileID: 4103951543608602145, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Unpaused
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103951543608602145, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535107925769454541, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: PlayerController
+      value: 
+      objectReference: {fileID: 7887530}
+    - target: {fileID: 4584677677034033389, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 622205517}
+    - target: {fileID: 4584677677034033389, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Unpaused
+      objectReference: {fileID: 0}
+    - target: {fileID: 5639490252831717576, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983391678396898372, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7007133427933932184, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -597,8 +676,49 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7007133428855439581, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7007133428855439581, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199692548496092019, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199692548496092019, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447108716404220402, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_Name
+      value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731165481796721117, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1635228520}
+    - target: {fileID: 7731165481796721117, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f46e45a9b1317904bb7bc07a70ddeaf4, type: 3}
+--- !u!1 &762525137 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4299574969423559468, guid: 8e260ff05172c814396b028450754951,
+    type: 3}
+  m_PrefabInstance: {fileID: 9116743731280517835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &796581540
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +848,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 69
     y: 70
-    width: 77
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2189,6 +2309,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1594047129 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7199692548496092019, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 725281646}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1622286667
 GameObject:
   m_ObjectHideFlags: 1
@@ -2263,6 +2389,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1635228515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7447108716404220402, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 725281646}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1635228520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635228515}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31622dea6751a4c48a7690bbc2120a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SneakyBar: {fileID: 1336966932}
+  speed: 2
+  gems: 1
+  gemsDisplay: {fileID: 2093597368}
+  inspect: {fileID: 762525137}
+  inventoryHUD: {fileID: 0}
+  PauseMenu: {fileID: 1594047129}
+  IsPaused: 1
+--- !u!114 &1755755507 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2954967963407181085, guid: f46e45a9b1317904bb7bc07a70ddeaf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 725281646}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf48d46a6e74314fbb0a060114423ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1786262893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,6 +2795,11 @@ PrefabInstance:
       propertyPath: gems
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4299574970056505478, guid: 8e260ff05172c814396b028450754951,
+        type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 1594047129}
     - target: {fileID: 4299574970056505478, guid: 8e260ff05172c814396b028450754951,
         type: 3}
       propertyPath: SneakyBar
