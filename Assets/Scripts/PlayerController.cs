@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer SpriteRenderer;
 
     public GameObject inventoryHUD;
-
+    public GameObject PauseMenu;
+    [SerializeField]public bool IsPaused = true;
     
 
     private void Awake() {
@@ -29,8 +30,7 @@ public class PlayerController : MonoBehaviour
         SpriteRenderer = GetComponent<SpriteRenderer>();
         inspectAlpha = inspect.GetComponent<SpriteRenderer>().color;
         //DontDestroyOnLoad(inventoryHUD);
-
-        
+        PauseMenu = GameObject.Find("PauseMenu");
     }
     private void OnEnable() {
         PlayerMovements.Enable();
@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
     {
         inspectAlpha.a = 0f;
         inspect.GetComponent<SpriteRenderer>().color = inspectAlpha;
+        PlayerMovements.Land.Interact.performed += _ => Interact();
+        PlayerMovements.Land.PauseMenu.performed += _ => PauseGame();
     }
 
     // Update is called once per frame
@@ -51,31 +53,50 @@ public class PlayerController : MonoBehaviour
         move();
     }
 
-    private void move(){
-        float movementInput = PlayerMovements.Land.Move.ReadValue<float>();
-        Vector3 currentPosition = transform.position;
-        currentPosition.x += movementInput * speed * Time.deltaTime;
-        transform.position = currentPosition;
+    private void Interact(){
+        Debug.Log("test");
+    }
 
-        if (movementInput != 0 && PlayerMovements.Land.Sneak.ReadValue <float>() != 1){
-            speed = 2;
-            Animator.SetBool("Walk",true);
-            }
-        else Animator.SetBool("Walk",false);
-
-        if (movementInput == 1) SpriteRenderer.flipX = false;
-        else if (movementInput == -1)SpriteRenderer.flipX = true;
-
-        if((movementInput == 1 && PlayerMovements.Land.Sneak.ReadValue <float>() == 1) ||(movementInput == -1 && PlayerMovements.Land.Sneak.ReadValue <float>() == 1) ) {
-            Animator.SetBool("Run",true);
-            speed =3;
-            Detected();
+    private void PauseGame(){
+        if(IsPaused){
+            Time.timeScale = 0;
+            IsPaused=false;
+            PauseMenu.transform.Find("Menu").gameObject.SetActive(true);
         }
-        else
-            {
-                Animator.SetBool("Run",false);
-                unDetected();
+        else{
+            Time.timeScale = 1;
+            IsPaused = true;
+            PauseMenu.transform.Find("Menu").gameObject.SetActive(false);
+        }
+    }
+
+    private void move(){
+        if (IsPaused){
+            float movementInput = PlayerMovements.Land.Move.ReadValue<float>();
+            Vector3 currentPosition = transform.position;
+            currentPosition.x += movementInput * speed * Time.deltaTime;
+            transform.position = currentPosition;
+
+            if (movementInput != 0 && PlayerMovements.Land.Sneak.ReadValue <float>() != 1){
+                speed = 2;
+                Animator.SetBool("Walk",true);
+                }
+            else Animator.SetBool("Walk",false);
+
+            if (movementInput == 1) SpriteRenderer.flipX = false;
+            else if (movementInput == -1)SpriteRenderer.flipX = true;
+
+            if((movementInput == 1 && PlayerMovements.Land.Sneak.ReadValue <float>() == 1) ||(movementInput == -1 && PlayerMovements.Land.Sneak.ReadValue <float>() == 1) ) {
+                Animator.SetBool("Run",true);
+                speed =3;
+                Detected();
             }
+            else
+                {
+                    Animator.SetBool("Run",false);
+                    unDetected();
+                }
+        }
     }
 
     float a=0;
